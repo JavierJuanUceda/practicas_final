@@ -136,7 +136,7 @@ public class Principal {
 			break;
 		case 15:
 			break;
-		case 16:ejercicio16();
+		case 16:;
 			break;
 		case 17:
 			break;
@@ -155,7 +155,7 @@ public class Principal {
 			break;
 		case 24:
 			break;
-		case 25:
+		case 25ejercicio25():
 			break;
 		case 26:
 			ejercicio26();
@@ -202,22 +202,54 @@ public class Principal {
     }
 	
 	
-	private static void ejercicio16() {
-		int[][] arrayC = {{1,2},{3,4},{5,6}};
-		int contadorfilas=0;
-		int contadorcolumnas=0;
+	private static void ejercicio25() {
+		int contador = 0;
+		String palabra;
+		char palabranueva = 0;
+		int valor = 0;
+		int charvalor = 0;
+		Scanner teclado = new Scanner(System.in);
+		palabra = teclado.nextLine();
+		palabranueva = palabra.charAt(0);
+		System.out.print(palabranueva);
 		/*
-		* Bucle que va recorriendo las filas
+		* Bucle que va comparando palabra por palabra
 		*/
-		for (contadorfilas=0;contadorfilas<arrayC.length;contadorfilas++) {
+		for (contador = 0; contador <= palabra.length() - 1; contador++) {
+			palabranueva = palabra.charAt(contador);
 			/*
-			* Bucle que imprime el array.
+			* Si algun caracter no es una letra termina el programa
 			*/
-			for (contadorcolumnas=0;contadorcolumnas<arrayC[0].length;contadorcolumnas++) {
-				System.out.print(arrayC[contadorfilas][contadorcolumnas]);
-			}	
+			if (!((palabranueva >= 'A') && (palabranueva <= 'z'))) {
+				System.out.print("Error");
+				contador = palabra.length();
+			} else {
+				palabranueva = palabra.charAt(0);
+				System.out.print(palabranueva);
+				/*
+				* Busca espacios
+				*/
+				for (contador = 0; contador <= palabra.length() - 1; contador++) {
+					palabranueva = palabra.charAt(contador);
+					/*
+					* Si es un espacio poner el caracter siguiente
+					*/
+					if (palabranueva == ' ') {
+						palabranueva = palabra.charAt(contador + 1);
+
+						System.out.print(palabranueva);
+					}
+
+					else {
+						contador = contador + 0;
+
+					}
+				}
+
+			}
 		}
-		
+	}
+
 	}
 
 
