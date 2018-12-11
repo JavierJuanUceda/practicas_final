@@ -155,7 +155,8 @@ public class Principal {
 			break;
 		case 24:
 			break;
-		case 25ejercicio25():
+		case 25:
+			ejercicio25():
 			break;
 		case 26:
 			ejercicio26();
